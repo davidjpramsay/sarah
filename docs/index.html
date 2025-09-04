@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday! | Sarah's Puzzle</title>
+    <meta name="description" content="A tiny birthday sliding puzzle game." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Happy Birthday, Sarah! 🎉</h1>
+      <p class="subtitle">A tiny sliding puzzle surprise.</p>
+    </header>
+
+    <main class="container">
+      <section class="controls" aria-label="Game Controls">
+        <label for="size">Puzzle size</label>
+        <select id="size" aria-label="Puzzle size">
+          <option value="3">3 × 3 (easy)</option>
+          <option value="4" selected>4 × 4 (classic)</option>
+          <option value="5">5 × 5 (hard)</option>
+        </select>
+
+        <button id="newGame" class="btn primary" aria-label="Start new game">New Game</button>
+
+        <div class="stats" role="status" aria-live="polite">
+          <div>Time: <span id="time">00:00</span></div>
+          <div>Moves: <span id="moves">0</span></div>
+        </div>
+      </section>
+
+      <section class="board-wrap">
+        <div id="board" class="board" role="application" aria-label="Sliding puzzle board"></div>
+        <figure class="preview">
+          <img src="assets/images/photo.jpg" alt="Puzzle preview" onerror="this.classList.add('missing')" />
+          <figcaption>Preview</figcaption>
+        </figure>
+      </section>
+
+      <section class="notes">
+        <p>
+          Tip: Use the arrow keys to move tiles. Complete the picture to reveal a special message!
+        </p>
+        <p>
+          Have an instructions PDF? It's kept in
+          <a href="instructions/" target="_blank" rel="noopener">docs/instructions/</a> for reference.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="winDialog">
+      <form method="dialog">
+        <h2>You did it! 🎂</h2>
+        <p id="winStats">Great job!</p>
+        <p class="confetti" aria-hidden="true">✨✨✨</p>
+        <button class="btn">Close</button>
+      </form>
+    </dialog>
+
+    <footer class="footer">
+      <small>Made with ❤️ for Sarah • Sliding puzzle</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
